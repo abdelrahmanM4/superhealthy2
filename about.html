@@ -3,17 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Us - Super Healthy</title>
+    <title>Super Healthy - Home</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <link rel="stylesheet" href="style.css" />
+    <style>
+      .dropdown-menu {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.3s ease, visibility 0.3s ease;
+      }
+      .dropdown-menu.show {
+        display: block;
+        opacity: 1;
+      }
+      .setting-icon {
+        width: 20px;
+        margin-right: 10px;
+      }
+      .dropdown-item {
+        display: flex;
+        align-items: center;
+      }
+    </style>
   </head>
   <body>
     <header class="bg-success text-white text-center p-4">
-      <h1>Super Healthy</h1>
-      <p>Your Guide to Sustainable Agriculture</p>
+      <h1 id="main-title">Super Healthy</h1>
+      <p id="main-description">Your Guide to Sustainable Agriculture</p>
     </header>
 
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -34,60 +53,92 @@
           <li class="nav-item">
             <a class="nav-link" href="index.html">Home</a>
           </li>
-          <li class="nav-item active">
+          <li class="nav-item">
             <a class="nav-link" href="about.html">About Us</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#products">Products</a>
+          <li class="nav-item active">
+            <a class="nav-link" href="products.html">Products</a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#contact">Contact</a>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="settingsDropdown"
+              role="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              onclick="toggleDropdown()"
+            >
+              Settings
+            </a>
+            <div class="dropdown-menu" aria-labelledby="settingsDropdown">
+              <a class="dropdown-item" href="#" onclick="toggleDarkMode()">
+                <img
+                  src="https://img.icons8.com/ios-filled/20/ffffff/sun.png"
+                  class="setting-icon"
+                />Toggle Dark Mode
+              </a>
+              <a class="dropdown-item" href="#" onclick="changeLanguage('en')">
+                <img
+                  src="https://img.icons8.com/ios-filled/20/ffffff/english.png"
+                  class="setting-icon"
+                />English
+              </a>
+              <a class="dropdown-item" href="#" onclick="changeLanguage('ar')">
+                <img
+                  src="https://img.icons8.com/ios-filled/20/ffffff/arabic.png"
+                  class="setting-icon"
+                />العربية
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#" onclick="toggleNotifications()">
+                <img
+                  src="https://img.icons8.com/ios-filled/20/ffffff/bell.png"
+                  class="setting-icon"
+                />Notifications
+              </a>
+            </div>
           </li>
         </ul>
       </div>
     </nav>
 
-    <main class="container my-5">
-      <!-- About Us Section -->
-      <section id="about" class="text-center">
-        <h2>About Us</h2>
-        <p>
-          Super Healthy is a company specializing in the production of seaweed
-          extracts used in agricultural lands as organic fertilizers and plant
-          nutrients. Key features include:
-        </p>
-        <ul class="text-left">
-          <li>
-            Resistance to environmental stressors such as high temperatures,
-            extreme cold, drought, and certain diseases.
-          </li>
-          <li>
-            Contains natural plant hormones that regulate plant growth safely,
-            without affecting human health.
-          </li>
-          <li>
-            Promotes healthy growth of plants at all stages: vegetative,
-            flowering, and fruiting.
-          </li>
-        </ul>
-        <p>
-          The company also produces specialized seaweed extracts for poultry,
-          which contain essential enzymes that improve digestion in birds and
-          animals, enhancing their overall health.
-        </p>
-        <p>
-          Super Healthy also develops and implements innovative algae production
-          projects using advanced technology, such as the bioreactor system, for
-          clients wishing to establish such projects with comprehensive
-          technical support.
-        </p>
-        <p>
-          Additionally, the company provides training courses to teach algae
-          cultivation and production, with guidance from experts in the field,
-          aiming to continually improve and satisfy all clients.
-        </p>
-      </section>
+    <main class="container my-5 text-center">
+      <h2 id="welcome-title">Welcome to Super Healthy!</h2>
+      <p id="welcome-description">
+        Discover sustainable solutions for agriculture with our range of
+        high-quality organic products.
+      </p>
+
+      <div class="support-section my-5">
+        <h3>Need Support?</h3>
+        <p>For assistance, please contact us at:</p>
+        <a href="mailto:rashrashad364@gmail.com" class="btn btn-support"
+          >Email Support</a
+        >
+        <a href="https://wa.me/01023460265" class="btn btn-success"
+          >WhatsApp Support</a
+        >
+      </div>
+
+      <div class="contact-section my-5">
+        <h3>Contact Us</h3>
+        <p>If you have any questions, feel free to reach out!</p>
+        <a href="mailto:rashrashad364@gmail.com" class="btn btn-primary"
+          >Email Us</a
+        >
+      </div>
     </main>
+
+    <div class="fixed-bottom d-flex justify-content-center mb-3">
+      <button
+        class="btn btn-custom"
+        id="settingsButton"
+        onclick="toggleDarkMode()"
+      >
+        Dark
+      </button>
+    </div>
 
     <footer class="bg-dark text-white text-center py-3">
       <p>&copy; 2024 Super Healthy. All rights reserved.</p>
