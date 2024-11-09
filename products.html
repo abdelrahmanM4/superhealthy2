@@ -3,82 +3,171 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Products - Super Healthy</title>
+    <title>Super Healthy - Products</title>
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     />
     <style>
-      .products-container {
-        max-height: 80vh;
-        overflow-y: scroll;
+      .image-gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 10px;
+        margin-top: 20px;
       }
-      .product-item {
-        margin-bottom: 15px;
+      .image-gallery img {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.2s;
+      }
+      .image-gallery img:hover {
+        transform: scale(1.05);
       }
     </style>
   </head>
   <body>
-    <header class="bg-success text-white text-center p-4">
-      <h1>Super Healthy</h1>
-      <p>Your Guide to Sustainable Agriculture</p>
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Super Healthy</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="about.html">About Us</a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="products.html">Products</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </header>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="index.html">Super Healthy</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNav"
-        aria-controls="navbarNav"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="index.html">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="about.html">About Us</a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="products.html">Products</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="contact.html">Contact</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
+    <main class="container">
+      <h1 class="mt-5 text-center">Our Products</h1>
 
-    <main class="container my-5">
-      <section id="products" class="text-center">
-        <h2>Our Products</h2>
-        <div class="products-container row">
-          <!-- عرض 16 صورة كمنتجات -->
-          {% for i in 1..16 %}
-          <div class="col-md-3 product-item">
-            <img
-              src="https://via.placeholder.com/150"
-              alt="Product {{i}}"
-              class="img-fluid rounded"
-            />
-            <p>Product {{i}}</p>
-          </div>
-          {% endfor %}
-        </div>
-      </section>
+      <div class="image-gallery">
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440733804_416838287816544_4538728221004066527_n.jpg?stp=dst-jpg_s640x640&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=2Qg-KjnAsMUQ7kNvgEl8vcK&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHL7z2oXh6NN-4tEvVPB1_IFyrSq-PCSjDZJzlSIQJl_A&oe=67571A95"
+          alt="Product Image 1"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462584808_2192961704438582_3372258935666432348_n.jpg?stp=dst-jpg_s640x640&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=xjPXLCM4EiMQ7kNvgFbdkJU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QE7ivwOu_fwxPADrExhJY31EkN5VdYxOjL_FoN0VzkDbA&oe=67571188"
+          alt="Product Image 2"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462572024_1189758895455903_1180646902521232110_n.jpg?stp=dst-jpg_s640x640&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=mqaGMeaktkwQ7kNvgEwjiO1&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEa-4H0Het4ohWk3H05xhtSKIiAe1q553p2Xaia0wMAnw&oe=67573231"
+          alt="Product Image 3"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/441999632_473714698426119_3629916566681509622_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ERD7dyoMzEcQ7kNvgHkb4Ve&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QE0l9wp_HUhcfB4Spz1VPpDsv5Fsg4NY5Yi6nE-IX-xwA&oe=67572C81"
+          alt="Product Image 4"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/441366261_814530613452628_1561145252970687341_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=CPvtnKvjbl0Q7kNvgEZmvL8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGONdUKdufotAhxs6X3aUJBKi6qE4nCOqkty34fvTcx8Q&oe=6757165C"
+          alt="Product Image 5"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/441673331_828724212644348_4680379609983472254_n.jpg?stp=dst-jpg_s640x640&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=9pSsBXjAz4AQ7kNvgG2UtBH&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEm1MfVUGA_znXl9ToXp3_HV5NZB5Sv0eAJrzchUb6OBg&oe=675721E7"
+          alt="Product Image 6"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440733804_416838287816544_4538728221004066527_n.jpg?stp=dst-jpg_s640x640&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=2Qg-KjnAsMUQ7kNvgEl8vcK&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHL7z2oXh6NN-4tEvVPB1_IFyrSq-PCSjDZJzlSIQJl_A&oe=67571A95"
+          alt="Product Image 6"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440730966_950025033341470_8033369647212404157_n.jpg?stp=dst-jpg_s640x640&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=zxQ_trcbDqsQ7kNvgGvw0c1&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QE0MQOI3ZYaEjb6aWZzfM1LPG6ex5Hz15g9-qhd0_GMPQ&oe=6757328E"
+          alt="Product Image 7"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440723078_1659815001503471_2691274899219802562_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=yVMY0WXHlJEQ7kNvgEO0fhn&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHlHbFiGqfZf2aKFON9fCXRhDMWSTc2Sa6FNOtcRKltWw&oe=67572AD1"
+          alt="Product Image 8"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/441366261_814530613452628_1561145252970687341_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=CPvtnKvjbl0Q7kNvgEZmvL8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGONdUKdufotAhxs6X3aUJBKi6qE4nCOqkty34fvTcx8Q&oe=6757165C"
+          alt="Product Image 9"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/441405656_461473486264288_5092158599691503514_n.jpg?stp=dst-jpg_s640x640&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=-t9JkLUAgYAQ7kNvgG-7RQz&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QF8oz1EVtqTguTsvZgRaTZwzzXAWgapC6CQ_CajcgPXHg&oe=67571291"
+          alt="Product Image 10"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440723078_1581165359099121_2042791783896749158_n.jpg?stp=dst-jpg_s640x640&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OlTmByy8rDoQ7kNvgE_bVg3&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QH37LHC5AMPnif56U8pG0F0jkGW12SQ6nfx_7RD2mAESA&oe=67573572"
+          alt="Product Image 11"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440768749_968666994757710_3139802785946044886_n.jpg?stp=dst-jpg_s640x640&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=I8dBYFfbBu4Q7kNvgFolmjK&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGHn0jOWUyuribbx4AmlcwmblAskL5OUOIgfbo7YQeyZg&oe=675718C4"
+          alt="Product Image 13"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/440756949_972726707367916_1988636436680976985_n.jpg?stp=dst-jpg_s640x640&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=m2q2NQnVD6UQ7kNvgFUTZim&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGa4UNMmDY8RSzj9j0hdEzdxm0_USltu63hv3EC8kir-w&oe=67573527"
+          alt="Product Image 14"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462562086_952085963399380_5382709375312850547_n.jpg?stp=dst-jpg_s640x640&_nc_cat=111&ccb=1-7&_nc_sid=0024fc&_nc_ohc=OwDaewTzWKcQ7kNvgF4hlHx&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEAuZjzIEUQdh_HsVB5JEtirm54c1GwX_IZx18K1yCEEA&oe=67571AA8"
+          alt="Product Image 15"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462565196_875767581337723_6152824527798415100_n.jpg?stp=dst-jpg_s640x640&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=ISXIQw-K-DUQ7kNvgHdLxKd&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEIFq-PHRWIHGCDFY4ORpHBcbWbjcVgkRVcApv0ejNR3Q&oe=67572B62"
+          alt="Product Image 16"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462570176_1272299383908513_8674878140091113464_n.jpg?stp=dst-jpg_s640x640&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=2orwR6Hdn7UQ7kNvgGHv1KL&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QEDT19z5-HZpiCaROqCj4soPhgLslZTyeWw28phvfW-ZA&oe=67571C76"
+          alt="Product Image 17"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462578198_485859474498645_8222501519305363151_n.jpg?stp=dst-jpg_s640x640&_nc_cat=101&ccb=1-7&_nc_sid=0024fc&_nc_ohc=UBkA-7q-648Q7kNvgGHXxzm&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHBXp6-j7I06j9Rl1tgDYVlggNQc8KgHfjk1lKUNk4V2w&oe=6757115F"
+          alt="Product Image 18"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462584808_2192961704438582_3372258935666432348_n.jpg?stp=dst-jpg_s640x640&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=xjPXLCM4EiMQ7kNvgFbdkJU&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QE7ivwOu_fwxPADrExhJY31EkN5VdYxOjL_FoN0VzkDbA&oe=67571188"
+          alt="Product Image 19"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462553960_482252718170409_9220198362030863649_n.jpg?stp=dst-jpg_s640x640&_nc_cat=102&ccb=1-7&_nc_sid=0024fc&_nc_ohc=rln8xBSFnIEQ7kNvgHvRYxF&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QGKbVxDHSGvEHsexz-SFsIvKhR6u5Icd1u_deFFl_P_Cg&oe=67574022"
+          alt="Product Image 20"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462579126_1486326372075556_3024878195768166182_n.jpg?stp=dst-jpg_s640x640&_nc_cat=104&ccb=1-7&_nc_sid=0024fc&_nc_ohc=gGheKAh3CKsQ7kNvgFKTDf8&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFbjXak1JdoTf_M5wIjXcXA0mYpuqZ5fVlQ-SuAS1dn2w&oe=675727D6"
+          alt="Product Image 21"
+        />
+        <img
+          src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462575404_3942075702735414_5948102117140455582_n.jpg?stp=dst-jpg_s640x640&_nc_cat=110&ccb=1-7&_nc_sid=0024fc&_nc_ohc=HfdXPccpqOgQ7kNvgEowcig&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QG67h9dHgrcsF01e6sAkiFUFtfAhz_dd98o9UFUWEFemA&oe=67570F9C"
+          alt="Product Image 22"
+        />
+        <img src="" alt="Product Image 23" />
+        <img src="" alt="Product Image 24" />
+        <img src="" alt="Product Image 25" />
+        <img src="" alt="Product Image 26" />
+        <img src="" alt="Product Image 27" />
+
+        <!-- Add more images as needed -->
+      </div>
     </main>
 
-    <footer class="bg-dark text-white text-center py-3">
+    <footer class="text-center mt-5">
       <p>&copy; 2024 Super Healthy. All rights reserved.</p>
     </footer>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </body>
 </html>
