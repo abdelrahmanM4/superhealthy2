@@ -75,3 +75,22 @@ function updateLanguage(lang) {
 function toggleNotifications() {
   alert("Notifications toggled!");
 }
+// Function to toggle dark mode
+function toggleDarkMode() {
+  // Toggle the dark mode class on the body element
+  document.body.classList.toggle("dark-mode");
+
+  // Store the dark mode preference in local storage
+  if (document.body.classList.contains("dark-mode")) {
+    localStorage.setItem("darkMode", "enabled");
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+  }
+}
+
+// Check for stored dark mode preference and apply it when the page loads
+window.onload = () => {
+  if (localStorage.getItem("darkMode") === "enabled") {
+    document.body.classList.add("dark-mode");
+  }
+};
